@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Category from './components/category-item/category-item.component';
+import Directory from './components/directory/directory.component';
 
 const categories = [
   {
@@ -31,18 +31,7 @@ const categories = [
 ];
 
 const App = () => {
-  return (
-    <div className='categories-container'>
-      {categories.map((category) => {
-        return (
-          <Category
-            {...category}
-            key={category.id}
-          />
-        );
-      })}
-    </div>
-  );
+  return <Directory categories={categories} />;
 };
 
 export default App;
