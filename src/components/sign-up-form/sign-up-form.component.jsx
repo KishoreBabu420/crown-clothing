@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import FormInput from '../form-input/form-input.component';
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -49,44 +51,53 @@ const SignUpForm = () => {
   };
 
   return (
-    <>
+    <div className='sign-up-container'>
       <h1>Sign Up with your email and password</h1>
       <form onSubmit={submitHandler}>
-        <label htmlFor='display-name'>Display Name</label>
-        <input
-          type='text'
-          required
-          id='display-name'
-          name='displayName'
-          onChange={changeHandler}
-          value={displayName}
+        <FormInput
+          label='Display Name'
+          inputOptions={{
+            type: 'text',
+            required: true,
+            id: 'display-name',
+            name: 'displayName',
+            onChange: { changeHandler },
+            value: displayName,
+          }}
         />
-        <label htmlFor='email'>Email</label>
-        <input
-          type='email'
-          required
-          id='email'
-          name='email'
-          value={email}
-          onChange={changeHandler}
+
+        <FormInput
+          label='Email'
+          inputOptions={{
+            type: 'email',
+            required: true,
+            id: 'email',
+            name: 'email',
+            value: email,
+            onChange: { changeHandler },
+          }}
         />
-        <label htmlFor='password'>Password</label>
-        <input
-          type='password'
-          required
-          id='password'
-          name='password'
-          value={password}
-          onChange={changeHandler}
+        <FormInput
+          label='Password'
+          inputOptions={{
+            type: 'password',
+            required: true,
+            id: 'password',
+            name: 'password',
+            value: password,
+            onChange: { changeHandler },
+          }}
         />
-        <label htmlFor='confirm-password'>Confirm Password</label>
-        <input
-          type='password'
-          required
-          id='confirm-password'
-          name='confirmPassword'
-          value={confirmPassword}
-          onChange={changeHandler}
+        <FormInput
+          label='Confirm Password'
+          inputOptions={{
+            type: 'password',
+            required: true,
+            id: 'confirm-password',
+            name: 'confirmPassword',
+            value: confirmPassword,
+            onChange: { changeHandler },
+          }}
         />
 
         <input
@@ -94,7 +105,7 @@ const SignUpForm = () => {
           value='Sign Up'
         />
       </form>
-    </>
+    </div>
   );
 };
 
