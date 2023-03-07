@@ -2,6 +2,10 @@ import { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 
+import Button from '../button/button.component';
+
+import './sign-up-form.styles.scss';
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -52,7 +56,8 @@ const SignUpForm = () => {
 
   return (
     <div className='sign-up-container'>
-      <h1>Sign Up with your email and password</h1>
+      <h2>Don't have an account?</h2>
+      <span>Sign Up with your email and password</span>
       <form onSubmit={submitHandler}>
         <FormInput
           label='Display Name'
@@ -100,10 +105,7 @@ const SignUpForm = () => {
           }}
         />
 
-        <input
-          type='submit'
-          value='Sign Up'
-        />
+        <Button type='submit'>Sign Up</Button>
       </form>
     </div>
   );
