@@ -1,6 +1,6 @@
 import './form-input.styles.scss';
 
-const FormInput = ({ label, inputOptions }) => {
+const FormInput = ({ label, inputOptions, onChange }) => {
   const { id, value } = inputOptions;
 
   return (
@@ -8,6 +8,7 @@ const FormInput = ({ label, inputOptions }) => {
       <input
         className='form-input'
         {...inputOptions}
+        onChange={onChange}
       />
       {label && (
         <label
