@@ -7,8 +7,7 @@ import Button from '../button/button.component';
 import './sign-in-form.styles.scss';
 
 import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
+  signInWithGooglePopup,,
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firbase.utils';
 
@@ -22,17 +21,13 @@ const SingInForm = () => {
   const { email, password } = formFields;
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
-        email,
-        password,
-      );
+      await signInAuthUserWithEmailAndPassword(email, password);
 
       setFormFields(defaultFormFields);
     } catch (err) {

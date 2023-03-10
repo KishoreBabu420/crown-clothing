@@ -3,7 +3,16 @@ import './navbar.styles.scss';
 
 import logo from '../../assets/images/logo.png';
 
+import { useGlobalContext } from '../../context/user.context';
+import { signOutUser } from '../../utils/firebase/firbase.utils';
+
 const Navbar = () => {
+  const { currentUser } = useGlobalContext();
+
+  const signOutHandler = async () => {
+    await signOutUser();
+  };
+
   return (
     <>
       <nav className='navbar'>
@@ -35,14 +44,27 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-          <li className='nav-item'>
-            <Link
-              className='nav-link'
-              to='/auth'
-            >
-              Sign In
-            </Link>
-          </li>
+
+          {currentUser ? (
+            <li className='nav-item'>
+              <span
+                className='nav-link'
+                onClick={signOutHandler}
+              >
+                Sign Out
+              </span>
+            </li>
+          ) : (
+            <li className='nav-item'>
+              <Link
+                className='nav-link'
+                to='/auth'
+              >
+                Sign In
+              </Link>
+            </li>
+          )}
+
           <li className='nav-item'>
             <Link
               className='nav-link'
