@@ -1,16 +1,20 @@
 import { useUserContext } from '../../context/user.context';
 
+import { useCartContext } from '../../context/cart.context';
+
 import { Outlet, Link } from 'react-router-dom';
 
 import { signOutUser } from '../../utils/firebase/firbase.utils';
 
 import CartIcon from '../../components/cart-icon/cart-icon.component';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
 import logo from '../../assets/images/logo.png';
 import './navbar.styles.scss';
 
 const Navbar = () => {
   const { currentUser } = useUserContext();
+  const { isCartOpen } = useCartContext();
 
   const signOutHandler = async () => {
     await signOutUser();
@@ -70,6 +74,8 @@ const Navbar = () => {
 
           <CartIcon />
         </ul>
+
+        {isCartOpen && <CartDropdown />}
       </nav>
       <Outlet />
     </>
