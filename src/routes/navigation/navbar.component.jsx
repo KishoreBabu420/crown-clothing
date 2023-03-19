@@ -1,10 +1,13 @@
+import { useUserContext } from '../../context/user.context';
+
 import { Outlet, Link } from 'react-router-dom';
-import './navbar.styles.scss';
+
+import { signOutUser } from '../../utils/firebase/firbase.utils';
+
+import CartIcon from '../../components/cart-icon/cart-icon.component';
 
 import logo from '../../assets/images/logo.png';
-
-import { useUserContext } from '../../context/user.context';
-import { signOutUser } from '../../utils/firebase/firbase.utils';
+import './navbar.styles.scss';
 
 const Navbar = () => {
   const { currentUser } = useUserContext();
@@ -65,14 +68,7 @@ const Navbar = () => {
             </li>
           )}
 
-          <li className='nav-item'>
-            <Link
-              className='nav-link'
-              to='/cart'
-            >
-              Cart
-            </Link>
-          </li>
+          <CartIcon />
         </ul>
       </nav>
       <Outlet />
