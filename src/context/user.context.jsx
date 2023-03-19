@@ -32,6 +32,6 @@ export const UserProvider = ({ children }) => {
 
 //3. EXport the AppContext as global context
 
-export const useGlobalContext = () => {
+export const useUserContext = () => {
   return useContext(UserContext);
 };

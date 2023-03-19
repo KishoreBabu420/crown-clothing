@@ -1,10 +1,22 @@
+import { useProductsContext } from '../../context/products.context';
+
+import ProductCard from '../../components/product-card/product-card.component';
+
 import './shop.styles.scss';
 
 const Shop = () => {
+  const { products } = useProductsContext();
   return (
-    <>
-      <h1>Shop</h1>
-    </>
+    <div className='products-container'>
+      {products.map((product) => {
+        return (
+          <ProductCard
+            key={product.id}
+            {...product}
+          />
+        );
+      })}
+    </div>
   );
 };
 

@@ -3,11 +3,11 @@ import './navbar.styles.scss';
 
 import logo from '../../assets/images/logo.png';
 
-import { useGlobalContext } from '../../context/user.context';
+import { useUserContext } from '../../context/user.context';
 import { signOutUser } from '../../utils/firebase/firbase.utils';
 
 const Navbar = () => {
-  const { currentUser } = useGlobalContext();
+  const { currentUser } = useUserContext();
 
   const signOutHandler = async () => {
     await signOutUser();
