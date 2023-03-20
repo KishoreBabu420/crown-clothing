@@ -5,6 +5,7 @@ import Navbar from './routes/navigation/navbar.component';
 import Authentication from './routes/authentication/authentication.component';
 import Contact from './routes/contact/contact.component';
 import Shop from './routes/shop/shop.component';
+import Checkout from './routes/checkout/checkout.component';
 
 const App = () => {
   return (
@@ -26,6 +27,11 @@ const App = () => {
         <Route
           path='contact'
           element={<Contact />}
+        />
+
+        <Route
+          path='checkout'
+          element={<Checkout />}
         />
 
         <Route
