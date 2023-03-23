@@ -77,8 +77,7 @@ const SingInForm = () => {
           onChange={changeHandler}
         />
         <div className='buttons-container'>
-          <Button type='submit'>Sign in</Button>
-
+          <Button>Sign in</Button>
           <Button
             buttonType='google'
             type='button'
