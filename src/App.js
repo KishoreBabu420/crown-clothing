@@ -20,7 +20,7 @@ const App = () => {
         />
 
         <Route
-          path='shop'
+          path='shop/*'
           element={<Shop />}
         />
 
