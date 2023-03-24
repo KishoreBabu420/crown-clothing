@@ -2,7 +2,7 @@ import { CheckOutItemContainer, ImageContainer } from './checkout-item.styles';
 import { useCartContext } from '../../context/cart.context';
 
 const CheckoutItem = ({ cartItem }) => {
-  const { imageUrl, name, price, quantity } = cartItem;
+  const { imageUrl, name, price, quantity, route } = cartItem;
   const { addItemToCart, removeItemFromCart, clearItemFromCart } =
     useCartContext();
 

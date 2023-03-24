@@ -4,9 +4,14 @@ import {
   BackgroundImage,
 } from './directory-item.styles';
 
-const DirectoryItem = ({ title, imageUrl }) => {
+import { useNavigate } from 'react-router-dom';
+
+const DirectoryItem = ({ title, imageUrl, route }) => {
+  const navigate = useNavigate();
+
+  const onNavigateHandler = () => navigate(route);
   return (
-    <DirectoryContainer>
+    <DirectoryContainer onClick={onNavigateHandler}>
       <BackgroundImage
         style={{ backgroundImage: `url(${imageUrl})` }}
       ></BackgroundImage>
