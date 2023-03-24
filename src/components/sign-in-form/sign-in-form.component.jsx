@@ -4,7 +4,7 @@ import FormInput from '../form-input/form-input.component';
 
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
-import './sign-in-form.styles.scss';
+import { SignInContainer, ButtonContainer, Title } from './sign-in-form.styles';
 
 import {
   signInWithGooglePopup,
@@ -50,8 +50,8 @@ const SingInForm = () => {
   };
 
   return (
-    <div className='sign-in-container'>
-      <h2>Don't have an account?</h2>
+    <SignInContainer>
+      <Title>Don't have an account?</Title>
       <span>Sign Up with your email and password</span>
       <form onSubmit={submitHandler}>
         <FormInput
@@ -76,7 +76,7 @@ const SingInForm = () => {
           }}
           onChange={changeHandler}
         />
-        <div className='buttons-container'>
+        <ButtonContainer>
           <Button>Sign in</Button>
           <Button
             buttonType={BUTTON_TYPE_CLASSES.google}
@@ -85,9 +85,9 @@ const SingInForm = () => {
           >
             Google Sign In
           </Button>
-        </div>
+        </ButtonContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 

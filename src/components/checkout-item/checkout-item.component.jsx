@@ -1,4 +1,4 @@
-import './checkout-item.styles.scss';
+import { CheckOutItemContainer, ImageContainer } from './checkout-item.styles';
 import { useCartContext } from '../../context/cart.context';
 
 const CheckoutItem = ({ cartItem }) => {
@@ -12,13 +12,13 @@ const CheckoutItem = ({ cartItem }) => {
   const addItemHandler = (cartItem) => addItemToCart(cartItem);
 
   return (
-    <div className='checkout-item-container'>
-      <div className='image-container'>
+    <CheckOutItemContainer>
+      <ImageContainer>
         <img
           src={imageUrl}
           alt={name}
         />
-      </div>
+      </ImageContainer>
       <span className='name'>{name}</span>
       <span className='quantity'>
         <div
@@ -42,7 +42,7 @@ const CheckoutItem = ({ cartItem }) => {
       >
         &#10005;
       </div>
-    </div>
+    </CheckOutItemContainer>
   );
 };
 
