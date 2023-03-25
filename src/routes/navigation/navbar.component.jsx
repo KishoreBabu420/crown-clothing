@@ -4,7 +4,7 @@ import { useCartContext } from '../../context/cart.context';
 
 import { Outlet } from 'react-router-dom';
 
-import { signOutUser } from '../../utils/firebase/firbase.utils';
+import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';

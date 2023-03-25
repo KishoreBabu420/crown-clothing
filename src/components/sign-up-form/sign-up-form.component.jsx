@@ -9,7 +9,7 @@ import { SignUpContainer, Title } from './sign-up-form.styles';
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
-} from '../../utils/firebase/firbase.utils';
+} from '../../utils/firebase/firebase.utils';
 
 const defaultFormFields = {
   displayName: '',

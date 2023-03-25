@@ -9,7 +9,7 @@ import { SignInContainer, ButtonContainer, Title } from './sign-in-form.styles';
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
-} from '../../utils/firebase/firbase.utils';
+} from '../../utils/firebase/firebase.utils';
 
 const defaultFormFields = {
   email: '',
